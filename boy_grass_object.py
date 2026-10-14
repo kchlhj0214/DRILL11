@@ -2,13 +2,18 @@ from pico2d import *
 import random
 
 
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 600
+GRASS_CENTER_Y = 30
+
+
 # Game object class here
 class Grass:
     def __init__(self):
         self.image = load_image('grass.png')
 
     def draw(self):
-        self.image.draw(400, 30)
+        self.image.draw(CANVAS_WIDTH // 2, GRASS_CENTER_Y)
 
     def update(self): pass
 
@@ -70,7 +75,7 @@ def reset_world():
 def update_world():
     for o in world:
         o.update()
-    
+  
 
 def render_world():
     clear_canvas()
@@ -79,7 +84,7 @@ def render_world():
     update_canvas()
 
 
-open_canvas()
+open_canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 
 reset_world()
 
