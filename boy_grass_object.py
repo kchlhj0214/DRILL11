@@ -56,9 +56,23 @@ class Ball:
         )
         self.y = self.start_y
         self.rise_speed = random.randint(5, 15)
+        self.state = 0
 
     def update(self):
-        self.y += self.rise_speed
+        if self.state == 0:
+            self.y += self.rise_speed
+            if self.y >= CANVAS_HEIGHT - self.half_height:
+                self.state = 1
+        elif self.state == 1:
+            self.y -= 2
+            if self.y <= CANVAS_HEIGHT - 40:
+                self.state = 2
+        elif self.state == 2:
+            self.y += 2
+            if self.y >= CANVAS_HEIGHT - self.half_height:
+                self.state = 1
+    
+
 
     def draw(self):
         self.image.draw(self.x, self.y)
