@@ -51,6 +51,10 @@ class Ball:
         self.half_width = self.image.w / 2
         self.half_height = self.image.h / 2
         self.start_y = ground_y + self.half_height
+        self.x = random.uniform(
+            self.half_width, CANVAS_WIDTH - self.half_width
+        )
+        self.y = self.start_y
 
     def update(self):
         pass
