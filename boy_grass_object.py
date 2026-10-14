@@ -55,9 +55,10 @@ class Ball:
             self.half_width, CANVAS_WIDTH - self.half_width
         )
         self.y = self.start_y
+        self.rise_speed = random.randint(5, 15)
 
     def update(self):
-        pass
+        self.y += self.rise_speed
 
     def draw(self):
         self.image.draw(self.x, self.y)
