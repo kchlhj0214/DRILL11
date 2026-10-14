@@ -70,8 +70,7 @@ class Ball:
         elif self.state == 2:
             self.y += 2
             if self.y >= CANVAS_HEIGHT - self.half_height:
-                self.state = 1
-    
+                self.state = 1   
 
 
     def draw(self):
@@ -105,11 +104,13 @@ def reset_world():
     world.append(zombie)
 
     ground_y = GRASS_CENTER_Y + grass.image.h / 2
-    balls = [
-        Ball('ball21x21.png', ground_y),
-        Ball('ball41x41.png', ground_y),
+    small_balls = [
+        Ball('ball21x21.png', ground_y) for _ in range(10)
     ]
-    world += balls
+    large_balls = [
+        Ball('ball41x41.png', ground_y) for _ in range(1)
+    ]
+    world += small_balls + large_balls
 
 
 def update_world():
