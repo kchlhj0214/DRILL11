@@ -108,7 +108,7 @@ def reset_world():
         Ball('ball21x21.png', ground_y) for _ in range(10)
     ]
     large_balls = [
-        Ball('ball41x41.png', ground_y) for _ in range(1)
+        Ball('ball41x41.png', ground_y) for _ in range(10)
     ]
     world += small_balls + large_balls
 
