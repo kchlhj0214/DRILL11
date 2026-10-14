@@ -60,7 +60,7 @@ class Ball:
         pass
 
     def draw(self):
-        pass
+        self.image.draw(self.x, self.y)
 
 
 def handle_events():
@@ -88,6 +88,13 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    ground_y = GRASS_CENTER_Y + grass.image.h / 2
+    balls = [
+        Ball('ball21x21.png', ground_y),
+        Ball('ball41x41.png', ground_y),
+    ]
+    world += balls
 
 
 def update_world():
