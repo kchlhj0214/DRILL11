@@ -47,7 +47,10 @@ class Zombie:
 
 class Ball:
     def __init__(self, image_name, ground_y):
-        pass
+        self.image = load_image(image_name)
+        self.half_width = self.image.w / 2
+        self.half_height = self.image.h / 2
+        self.start_y = ground_y + self.half_height
 
     def update(self):
         pass
