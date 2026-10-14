@@ -104,11 +104,14 @@ def reset_world():
     world.append(zombie)
 
     ground_y = GRASS_CENTER_Y + grass.image.h / 2
+
+    small_balls_num = random.randint(1, 19)
+
     small_balls = [
-        Ball('ball21x21.png', ground_y) for _ in range(10)
+        Ball('ball21x21.png', ground_y) for _ in range(small_balls_num)
     ]
     large_balls = [
-        Ball('ball41x41.png', ground_y) for _ in range(10)
+        Ball('ball41x41.png', ground_y) for _ in range(20 - small_balls_num)
     ]
     world += small_balls + large_balls
 
